@@ -29,3 +29,4 @@ fi
 
 echo "✔ Installed successfully"
 echo "Restart your terminal or run: exec \$SHELL"
+cp mp4convert "$INSTALL_DIR/"
