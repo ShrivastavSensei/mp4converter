@@ -1,2 +1,5 @@
-# mp4coverter
-this tool helps conversion mp4tomp3 for local files, for the household techsupport guys
+Yes this is a read me file 
+nothing much 
+
+if you wanna use the tool just use it
+uhh
