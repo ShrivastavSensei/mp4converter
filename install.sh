@@ -2,21 +2,28 @@
 set -e
 
 APP_NAME="mp4convert"
+REPO="ShrivastavSensei/mp4converter"
+BRANCH="main"
 INSTALL_DIR="$HOME/.local/bin"
 
 echo "▶ Installing $APP_NAME..."
 
-# Create bin directory
 mkdir -p "$INSTALL_DIR"
 
-# Copy files
-cp "$APP_NAME" "$INSTALL_DIR/"
-cp ascii.txt "$INSTALL_DIR/"
+# Download main script
+curl -fsSL \
+"https://raw.githubusercontent.com/$REPO/$BRANCH/mp4convert" \
+-o "$INSTALL_DIR/$APP_NAME"
+
+# Download ASCII art
+curl -fsSL \
+"https://raw.githubusercontent.com/$REPO/$BRANCH/ascii.txt" \
+-o "$INSTALL_DIR/ascii.txt"
 
 # Make executable
 chmod +x "$INSTALL_DIR/$APP_NAME"
 
-# Add to PATH if missing
+# Add to PATH if needed
 if ! echo "$PATH" | grep -q "$INSTALL_DIR"; then
   echo "▶ Adding $INSTALL_DIR to PATH"
 
@@ -29,4 +36,3 @@ fi
 
 echo "✔ Installed successfully"
 echo "Restart your terminal or run: exec \$SHELL"
-cp mp4convert "$INSTALL_DIR/"
